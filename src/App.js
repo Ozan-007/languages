@@ -1,22 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import categories from './helpers/data';
+import Child from './components/child';
+import Image from './components/Image';
 
 function App() {
+
   return (
     <div className="App">
+        <Image/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <div className="grid-container">
+       <div className="headline"> <h2>Languages</h2></div>
+        {categories.map(item => <Child language={item}/>)}
+        </div>
       </header>
     </div>
   );
